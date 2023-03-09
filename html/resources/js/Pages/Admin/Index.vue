@@ -2,7 +2,7 @@
     <Head :title="title" />
     <ul>
         <li>
-            <Link :href="route('admin')">Admin</Link>
+            <Link :href="route('home')">Home</Link>
         </li>
     </ul>
 

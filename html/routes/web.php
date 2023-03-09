@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
+
+Route::group([
+    'prefix'=>'admin',
+], function () {
+    Route::get('/', [App\Http\Controllers\Admin\IndexController::class, 'index'])->name('admin');
+});
