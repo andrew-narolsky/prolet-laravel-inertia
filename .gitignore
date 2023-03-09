@@ -3,3 +3,4 @@
 /docker/.env
 /html/public/assets
 /html/composer.lock
+/html/package-lock.json
