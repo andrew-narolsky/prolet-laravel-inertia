@@ -1,0 +1,5 @@
+/.idea
+/data
+/docker/.env
+/html/public/assets
+/html/composer.lock
