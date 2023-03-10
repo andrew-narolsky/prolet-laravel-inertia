@@ -37,7 +37,9 @@ class LanguageController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Admin/Language/Create', [
+            'title' => 'Створення нової мови',
+        ]);
     }
 
     /**
@@ -45,7 +47,13 @@ class LanguageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:3|max:255',
+            'code' => 'required|min:2|max:2',
+        ]);
+        $this->language->create($request->all());
+        session()->flash('success', 'Нова мова успішно додана!');
+        return redirect()->route('languages.index');
     }
 
     /**

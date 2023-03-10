@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import {Link} from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3'
 import AdminLayout from '../../../Shared/Admin/Layout.vue'
 export default {
     components: {
