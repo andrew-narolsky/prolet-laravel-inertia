@@ -86,6 +86,12 @@ class LanguageController extends Controller
      */
     public function destroy(Language $language)
     {
-        //
+        if ($language->code == config('app.fallback_locale')) {
+            session()->flash('error', 'Базову мову не можливо видалити!');
+        } else {
+            $language->delete();
+            session()->flash('success', 'Мова успішно видалена!');
+        }
+        return redirect()->route('languages.index');
     }
 }
