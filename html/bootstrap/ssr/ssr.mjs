@@ -1,6 +1,6 @@
 import { Head, Link, createInertiaApp } from "@inertiajs/vue3";
-import { useSSRContext, resolveComponent, withCtx, createTextVNode, mergeProps, createSSRApp, h } from "vue";
-import { ssrRenderComponent, ssrInterpolate, ssrRenderAttrs, ssrRenderSlot } from "vue/server-renderer";
+import { useSSRContext, resolveComponent, mergeProps, createSSRApp, h } from "vue";
+import { ssrRenderComponent, ssrRenderAttr, ssrInterpolate, ssrRenderAttrs, ssrRenderSlot } from "vue/server-renderer";
 import createServer from "@inertiajs/vue3/server";
 import { renderToString } from "@vue/server-renderer";
 const _export_sfc = (sfc, props) => {
@@ -12,8 +12,7 @@ const _export_sfc = (sfc, props) => {
 };
 const _sfc_main$2 = {
   components: {
-    Head,
-    Link
+    Head
   },
   props: {
     title: String
@@ -21,25 +20,9 @@ const _sfc_main$2 = {
 };
 function _sfc_ssrRender$2(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Head = resolveComponent("Head");
-  const _component_Link = resolveComponent("Link");
   _push(`<!--[-->`);
   _push(ssrRenderComponent(_component_Head, { title: $props.title }, null, _parent));
-  _push(`<ul><li>`);
-  _push(ssrRenderComponent(_component_Link, {
-    href: _ctx.route("home")
-  }, {
-    default: withCtx((_, _push2, _parent2, _scopeId) => {
-      if (_push2) {
-        _push2(`Home`);
-      } else {
-        return [
-          createTextVNode("Home")
-        ];
-      }
-    }),
-    _: 1
-  }, _parent));
-  _push(`</li></ul><h1>${ssrInterpolate($props.title)}</h1><!--]-->`);
+  _push(`<ul><li><a${ssrRenderAttr("href", _ctx.route("home"))}>Home</a></li></ul><h1>${ssrInterpolate($props.title)}</h1><!--]-->`);
 }
 const _sfc_setup$2 = _sfc_main$2.setup;
 _sfc_main$2.setup = (props, ctx) => {
@@ -54,8 +37,7 @@ const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
 }, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$1 = {
   components: {
-    Head,
-    Link
+    Head
   },
   props: {
     title: String
@@ -63,25 +45,9 @@ const _sfc_main$1 = {
 };
 function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Head = resolveComponent("Head");
-  const _component_Link = resolveComponent("Link");
   _push(`<!--[-->`);
   _push(ssrRenderComponent(_component_Head, { title: $props.title }, null, _parent));
-  _push(`<ul><li>`);
-  _push(ssrRenderComponent(_component_Link, {
-    href: _ctx.route("admin")
-  }, {
-    default: withCtx((_, _push2, _parent2, _scopeId) => {
-      if (_push2) {
-        _push2(`Admin`);
-      } else {
-        return [
-          createTextVNode("Admin")
-        ];
-      }
-    }),
-    _: 1
-  }, _parent));
-  _push(`</li></ul><h1>${ssrInterpolate($props.title)}</h1><!--]-->`);
+  _push(`<ul><li><a${ssrRenderAttr("href", _ctx.route("admin"))}>Admin</a></li></ul><h1>${ssrInterpolate($props.title)}</h1><!--]-->`);
 }
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {

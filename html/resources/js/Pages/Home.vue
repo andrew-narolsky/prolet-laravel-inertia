@@ -2,7 +2,7 @@
     <Head :title="title" />
     <ul>
         <li>
-            <Link :href="route('admin')">Admin</Link>
+            <a :href="route('admin')">Admin</a>
         </li>
     </ul>
 
@@ -10,11 +10,10 @@
 </template>
 
 <script>
-import { Head, Link } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 export default {
     components: {
-        Head,
-        Link
+        Head
     },
     props: {
         title: String
