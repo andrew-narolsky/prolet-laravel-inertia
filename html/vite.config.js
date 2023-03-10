@@ -21,7 +21,13 @@ export default defineConfig({
             ssr: 'resources/js/ssr.js',
             refresh: true,
         }),
-        vue(),
+        vue({
+            template: {
+                transformAssetUrls: {
+                    includeAbsolute: false
+                }
+            }
+        }),
         viteStaticCopy({
             targets: [
                 {
