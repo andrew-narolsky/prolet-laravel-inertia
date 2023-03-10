@@ -160,11 +160,11 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <Link :href="route('languages.index')" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fa fa-list nav-icon"></i>
                                     <p>Список мов</p>
                                 </Link>
                                 <Link :href="route('languages.create')" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fa fa-plus nav-icon"></i>
                                     <p>Добавити мову</p>
                                 </Link>
                             </li>

@@ -7,19 +7,16 @@
                 </Link>
             </div>
         </div>
-
         <div v-if="$page.props.success" class="alert alert-success alert-dismissible mt-3">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h5><i class="icon fas fa-check"></i> Вітаю!</h5>
             {{ $page.props.success }}
         </div>
-
         <div v-if="$page.props.error" class="alert alert-danger alert-dismissible mt-3">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             <h5><i class="icon fas fa-ban"></i>  Увага!</h5>
             {{ $page.props.error }}
         </div>
-
         <div class="card mt-4" v-if="languages.length > 0">
             <div class="card-body p-0">
                 <table class="table table-sm table-striped">

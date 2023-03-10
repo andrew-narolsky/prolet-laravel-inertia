@@ -1,6 +1,13 @@
 <template>
     <section class="template-cards">
-        <div class="card card-primary">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+                <Link :href="route('languages.index')" class="btn btn-outline-success">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Список мов
+                </Link>
+            </div>
+        </div>
+        <div class="card card-primary mt-4">
             <form @submit.prevent="store">
                 <div class="card-body">
                     <div class="form-group">
@@ -23,9 +30,12 @@
 </template>
 
 <script>
-import { useForm } from '@inertiajs/vue3'
+import { Link, useForm } from '@inertiajs/vue3'
 import AdminLayout from '../../../Shared/Admin/Layout.vue'
 export default {
+    components: {
+        Link
+    },
     layout: AdminLayout,
     setup() {
         const form = useForm({
