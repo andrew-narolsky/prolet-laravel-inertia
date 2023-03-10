@@ -49,7 +49,7 @@ class LanguageController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3|max:255',
-            'code' => 'required|min:2|max:2',
+            'code' => 'required|min:2|max:2|unique:languages',
         ]);
         $this->language->create($request->all());
         session()->flash('success', 'Нова мова успішно додана!');
@@ -59,23 +59,32 @@ class LanguageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Language $language)
     {
-        //
+        return Inertia::render('Admin/Language/Edit', [
+            'title' => 'Редагування мови',
+            'language' => $language
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Language $language)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:3|max:255',
+            'code' => 'required|min:2|max:2|unique:languages,code,' . $language->id,
+        ]);
+        $language->update($request->all());
+        session()->flash('success', 'Мова успішно оновлена!');
+        return redirect()->route('languages.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Language $language)
     {
         //
     }
