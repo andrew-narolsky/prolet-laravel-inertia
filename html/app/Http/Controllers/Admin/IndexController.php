@@ -10,7 +10,8 @@ class IndexController extends Controller
     public function index()
     {
         return Inertia::render('Admin/Index', [
-            'title' => 'Admin page'
+            'title' => 'Адмінпанель',
+            'isHome' => true
         ]);
     }
 }

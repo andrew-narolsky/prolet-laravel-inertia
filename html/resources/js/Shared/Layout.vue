@@ -1,17 +1,8 @@
 <template>
-    <div class="container mx-auto">
-        <div class="my-10">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
             <slot />
-        </div>
-    </div>
+        </div><!-- /.container-fluid -->
+    </section>
 </template>
-
-<script>
-import { Link } from '@inertiajs/vue3';
-
-export default {
-    components: {
-        Link
-    }
-}
-</script>

@@ -20,4 +20,5 @@ Route::group([
     'prefix'=>'admin',
 ], function () {
     Route::get('/', [App\Http\Controllers\Admin\IndexController::class, 'index'])->name('admin');
+    Route::resource('/languages', App\Http\Controllers\Admin\LanguageController::class, ['only' => ['index', 'create', 'store', 'edit', 'update', 'destroy']]);
 });
