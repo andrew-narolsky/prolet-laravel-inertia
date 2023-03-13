@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LanguageRequest;
 use App\Models\Language;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class LanguageController extends Controller
@@ -45,12 +45,8 @@ class LanguageController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(LanguageRequest $request)
     {
-        $request->validate([
-            'name' => 'required|min:3|max:255',
-            'code' => 'required|min:2|max:2|unique:languages',
-        ]);
         $this->language->create($request->all());
         session()->flash('success', 'Нова мова успішно додана!');
         return redirect()->route('languages.index');
@@ -70,12 +66,8 @@ class LanguageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Language $language)
+    public function update(LanguageRequest $request, Language $language)
     {
-        $request->validate([
-            'name' => 'required|min:3|max:255',
-            'code' => 'required|min:2|max:2|unique:languages,code,' . $language->id,
-        ]);
         $language->update($request->all());
         session()->flash('success', 'Мова успішно оновлена!');
         return redirect()->route('languages.index');
