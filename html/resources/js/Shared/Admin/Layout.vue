@@ -153,7 +153,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-language"></i>
                             <p>
-                                Список мов
+                                Мови
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -161,11 +161,32 @@
                             <li class="nav-item">
                                 <Link :href="route('languages.index')" class="nav-link">
                                     <i class="fa fa-list nav-icon"></i>
-                                    <p>Список мов</p>
+                                    <p>Мови</p>
                                 </Link>
                                 <Link :href="route('languages.create')" class="nav-link">
                                     <i class="fa fa-plus nav-icon"></i>
                                     <p>Добавити мову</p>
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>
+                                Користувачі
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <Link :href="route('users.index')" class="nav-link">
+                                    <i class="fa fa-list nav-icon"></i>
+                                    <p>Користувачі</p>
+                                </Link>
+                                <Link :href="route('users.create')" class="nav-link">
+                                    <i class="fa fa-plus nav-icon"></i>
+                                    <p>Добавити користувача</p>
                                 </Link>
                             </li>
                         </ul>
@@ -195,11 +216,8 @@
         </section>
     </div>
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        <strong>Copyright &copy; 2016-2023 <a href="https://siteforyou.org/">SiteForYou</a>.</strong>
         All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.2.0
-        </div>
     </footer>
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Control sidebar content goes here -->
