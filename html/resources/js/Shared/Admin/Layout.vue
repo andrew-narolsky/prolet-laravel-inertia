@@ -191,6 +191,27 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-shopping-bag"></i>
+                            <p>
+                                Магазин
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <Link :href="route('categories.index')" class="nav-link">
+                                    <i class="fa fa-list nav-icon"></i>
+                                    <p>Категорії</p>
+                                </Link>
+                                <Link :href="route('categories.create')" class="nav-link">
+                                    <i class="fa fa-plus nav-icon"></i>
+                                    <p>Добавити категорію</p>
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>

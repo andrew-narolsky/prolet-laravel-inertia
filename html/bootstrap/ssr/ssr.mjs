@@ -1,6 +1,7 @@
 import { Head, Link, useForm, createInertiaApp } from "@inertiajs/vue3";
 import { useSSRContext, resolveComponent, withCtx, createVNode, createTextVNode, mergeProps, createSSRApp, h } from "vue";
 import { ssrRenderComponent, ssrRenderStyle, ssrInterpolate, ssrRenderSlot, ssrRenderAttrs, ssrRenderClass, ssrRenderAttr, ssrIncludeBooleanAttr, ssrRenderList } from "vue/server-renderer";
+import Editor from "@tinymce/tinymce-vue";
 import createServer from "@inertiajs/vue3/server";
 import { renderToString } from "@vue/server-renderer";
 const _export_sfc = (sfc, props) => {
@@ -10,7 +11,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$a = {
+const _sfc_main$e = {
   components: {
     Head,
     Link
@@ -20,7 +21,7 @@ const _sfc_main$a = {
     isHome: Boolean
   }
 };
-function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$e(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Head = resolveComponent("Head");
   const _component_Link = resolveComponent("Link");
   _push(`<!--[-->`);
@@ -91,6 +92,39 @@ function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
+  _push(`</li></ul></li><li class="nav-item"><a href="#" class="nav-link"><i class="nav-icon fas fa-shopping-bag"></i><p> Магазин <i class="fas fa-angle-left right"></i></p></a><ul class="nav nav-treeview"><li class="nav-item">`);
+  _push(ssrRenderComponent(_component_Link, {
+    href: _ctx.route("categories.index"),
+    class: "nav-link"
+  }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`<i class="fa fa-list nav-icon"${_scopeId}></i><p${_scopeId}>Категорії</p>`);
+      } else {
+        return [
+          createVNode("i", { class: "fa fa-list nav-icon" }),
+          createVNode("p", null, "Категорії")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(ssrRenderComponent(_component_Link, {
+    href: _ctx.route("categories.create"),
+    class: "nav-link"
+  }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`<i class="fa fa-plus nav-icon"${_scopeId}></i><p${_scopeId}>Добавити категорію</p>`);
+      } else {
+        return [
+          createVNode("i", { class: "fa fa-plus nav-icon" }),
+          createVNode("p", null, "Добавити категорію")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
   _push(`</li></ul></li></ul></nav></div></aside><div class="content-wrapper"><div class="content-header">`);
   if (!$props.isHome) {
     _push(`<div class="container-fluid"><div class="row mb-2 d-flex justify-content-between"><h1 class="m-0">${ssrInterpolate($props.title)}</h1><ol class="breadcrumb float-sm-right"><li class="breadcrumb-item">`);
@@ -116,31 +150,31 @@ function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(`</div></section></div><footer class="main-footer"><strong>Copyright © 2016-2023 <a href="https://siteforyou.org/">SiteForYou</a>.</strong> All rights reserved. </footer><aside class="control-sidebar control-sidebar-dark"></aside><!--]-->`);
 }
-const _sfc_setup$a = _sfc_main$a.setup;
-_sfc_main$a.setup = (props, ctx) => {
+const _sfc_setup$e = _sfc_main$e.setup;
+_sfc_main$e.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Shared/Admin/Layout.vue");
-  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
+  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
 };
-const AdminLayout = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["ssrRender", _sfc_ssrRender$a]]);
-const _sfc_main$9 = {
+const AdminLayout = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["ssrRender", _sfc_ssrRender$e]]);
+const _sfc_main$d = {
   layout: AdminLayout
 };
-function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$d(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   _push(`<div${ssrRenderAttrs(mergeProps({ class: "row" }, _attrs))}><div class="col-lg-3 col-6"><div class="small-box bg-info"><div class="inner"><h3>150</h3><p>New Orders</p></div><div class="icon"><i class="ion ion-bag"></i></div><a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div><div class="col-lg-3 col-6"><div class="small-box bg-success"><div class="inner"><h3>53<sup style="${ssrRenderStyle({ "font-size": "20px" })}">%</sup></h3><p>Bounce Rate</p></div><div class="icon"><i class="ion ion-stats-bars"></i></div><a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div><div class="col-lg-3 col-6"><div class="small-box bg-warning"><div class="inner"><h3>44</h3><p>User Registrations</p></div><div class="icon"><i class="ion ion-person-add"></i></div><a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div><div class="col-lg-3 col-6"><div class="small-box bg-danger"><div class="inner"><h3>65</h3><p>Unique Visitors</p></div><div class="icon"><i class="ion ion-pie-graph"></i></div><a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div></div>`);
 }
-const _sfc_setup$9 = _sfc_main$9.setup;
-_sfc_main$9.setup = (props, ctx) => {
+const _sfc_setup$d = _sfc_main$d.setup;
+_sfc_main$d.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Index.vue");
-  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
+  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
 };
-const Index$2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["ssrRender", _sfc_ssrRender$9]]);
+const Index$3 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["ssrRender", _sfc_ssrRender$d]]);
 const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Index$2
+  default: Index$3
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$8 = {
+const _sfc_main$c = {
   components: {
     Link
   },
@@ -156,7 +190,7 @@ const _sfc_main$8 = {
     return { form, store };
   }
 };
-function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$c(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Link = resolveComponent("Link");
   _push(`<section${ssrRenderAttrs(mergeProps({ class: "template-cards" }, _attrs))}><div class="row"><div class="col-12 d-flex justify-content-between">`);
   _push(ssrRenderComponent(_component_Link, {
@@ -180,18 +214,18 @@ function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, _parent));
   _push(`</div></div><div class="card card-primary mt-4"><form><div class="card-body"><div class="form-group"><label for="name">Найменування</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}"${ssrRenderAttr("value", $setup.form.name)} type="text" id="name" placeholder="Найменування"><div class="text-danger small">${ssrInterpolate($setup.form.errors.name)}</div></div><div class="form-group"><label for="code">Код</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.code }, "form-control"])}"${ssrRenderAttr("value", $setup.form.code)} type="text" id="code" placeholder="Код"><div class="text-danger small">${ssrInterpolate($setup.form.errors.code)}</div></div></div><div class="card-footer"><button${ssrIncludeBooleanAttr($setup.form.processing) ? " disabled" : ""} type="submit" class="btn btn-primary">Зберегти</button></div></form></div></section>`);
 }
-const _sfc_setup$8 = _sfc_main$8.setup;
-_sfc_main$8.setup = (props, ctx) => {
+const _sfc_setup$c = _sfc_main$c.setup;
+_sfc_main$c.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Language/Create.vue");
-  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
+  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
 };
-const Create$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["ssrRender", _sfc_ssrRender$8]]);
+const Create$2 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["ssrRender", _sfc_ssrRender$c]]);
 const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Create$1
+  default: Create$2
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$7 = {
+const _sfc_main$b = {
   components: {
     Link
   },
@@ -210,7 +244,7 @@ const _sfc_main$7 = {
     return { form, update };
   }
 };
-function _sfc_ssrRender$7(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$b(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Link = resolveComponent("Link");
   _push(`<section${ssrRenderAttrs(mergeProps({ class: "template-cards" }, _attrs))}><div class="row"><div class="col-12 d-flex justify-content-between">`);
   _push(ssrRenderComponent(_component_Link, {
@@ -234,18 +268,18 @@ function _sfc_ssrRender$7(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }, _parent));
   _push(`</div></div><div class="card card-primary mt-4"><form><div class="card-body"><div class="form-group"><label for="name">Найменування</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}"${ssrRenderAttr("value", $setup.form.name)} type="text" id="name" placeholder="Найменування"><div class="text-danger small">${ssrInterpolate($setup.form.errors.name)}</div></div><div class="form-group"><label for="code">Код</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.code }, "form-control"])}"${ssrRenderAttr("value", $setup.form.code)} type="text" id="code" placeholder="Код"><div class="text-danger small">${ssrInterpolate($setup.form.errors.code)}</div></div></div><div class="card-footer"><button${ssrIncludeBooleanAttr($setup.form.processing) ? " disabled" : ""} type="submit" class="btn btn-primary">Змінити</button></div></form></div></section>`);
 }
-const _sfc_setup$7 = _sfc_main$7.setup;
-_sfc_main$7.setup = (props, ctx) => {
+const _sfc_setup$b = _sfc_main$b.setup;
+_sfc_main$b.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Language/Edit.vue");
-  return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
+  return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
 };
-const Edit$1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["ssrRender", _sfc_ssrRender$7]]);
+const Edit$1 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["ssrRender", _sfc_ssrRender$b]]);
 const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Edit$1
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$6 = {
+const _sfc_main$a = {
   components: {
     Link
   },
@@ -261,7 +295,7 @@ const _sfc_main$6 = {
     }
   }
 };
-function _sfc_ssrRender$6(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+function _sfc_ssrRender$a(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
   const _component_Link = resolveComponent("Link");
   _push(`<section${ssrRenderAttrs(mergeProps({ class: "template-cards" }, _attrs))}><div class="row"><div class="col-12 d-flex justify-content-between">`);
   _push(ssrRenderComponent(_component_Link, {
@@ -321,14 +355,253 @@ function _sfc_ssrRender$6(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
   }
   _push(`</section>`);
 }
+const _sfc_setup$a = _sfc_main$a.setup;
+_sfc_main$a.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Language/Index.vue");
+  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
+};
+const Index$2 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["ssrRender", _sfc_ssrRender$a]]);
+const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: Index$2
+}, Symbol.toStringTag, { value: "Module" }));
+const _sfc_main$9 = {
+  name: "Option",
+  props: {
+    category: Object,
+    depth: String
+  }
+};
+function _sfc_ssrRender$9(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_Option = resolveComponent("Option", true);
+  _push(`<!--[--><option${ssrRenderAttr("value", $props.category.id)}>${ssrInterpolate($props.depth + " " + $props.category.name)}</option><!--[-->`);
+  ssrRenderList($props.category.children, (category) => {
+    _push(ssrRenderComponent(_component_Option, {
+      category,
+      depth: $props.depth + "-"
+    }, null, _parent));
+  });
+  _push(`<!--]--><!--]-->`);
+}
+const _sfc_setup$9 = _sfc_main$9.setup;
+_sfc_main$9.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Shop/Categories/Option.vue");
+  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
+};
+const Option = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["ssrRender", _sfc_ssrRender$9]]);
+const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: Option
+}, Symbol.toStringTag, { value: "Module" }));
+const _sfc_main$8 = {
+  components: {
+    Editor
+  },
+  props: {
+    languages: Object,
+    form: Object,
+    tiniMSEApiKey: String
+  }
+};
+function _sfc_ssrRender$8(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_Editor = resolveComponent("Editor");
+  _push(`<!--[--><ul class="nav nav-tabs" role="tablist"><!--[-->`);
+  ssrRenderList($props.languages, (language) => {
+    _push(`<li class="nav-item"><a class="${ssrRenderClass([{ "active": language.id === 1 }, "nav-link"])}" data-toggle="pill"${ssrRenderAttr("href", "#" + language.code)} role="tab">${ssrInterpolate(language.name)}</a></li>`);
+  });
+  _push(`<!--]--></ul><div class="tab-content"><!--[-->`);
+  ssrRenderList($props.languages, (language) => {
+    _push(`<div class="${ssrRenderClass([{ "active show": language.id === 1 }, "tab-pane fade"])}"${ssrRenderAttr("id", language.code)} role="tabpanel"><div class="form-group mt-3"><label>Заголовок</label><input type="text" class="form-control"${ssrRenderAttr("value", $props.form.languages.seo_h1[language.code])} placeholder="Заголовок"></div><div class="form-group mt-3"><label>Текстовий опис</label>`);
+    _push(ssrRenderComponent(_component_Editor, {
+      "api-key": $props.tiniMSEApiKey,
+      modelValue: $props.form.languages.text[language.code],
+      "onUpdate:modelValue": ($event) => $props.form.languages.text[language.code] = $event,
+      init: {
+        height: 300,
+        plugins: [
+          "advlist autolink lists link image charmap print preview anchor",
+          "searchreplace visualblocks code fullscreen",
+          "insertdatetime media table paste code help wordcount"
+        ],
+        toolbar: "undo redo | formatselect | bold italic backcolor |                             alignleft aligncenter alignright alignjustify |                             bullist numlist outdent indent | removeformat | help"
+      }
+    }, null, _parent));
+    _push(`</div><div class="form-group mt-2"><label>Seo Title</label><input type="text" class="form-control"${ssrRenderAttr("value", $props.form.languages.seo_title[language.code])} placeholder="Seo Title"></div><div class="form-group mt-2"><label>Seo Description</label><input type="text" class="form-control"${ssrRenderAttr("value", $props.form.languages.seo_description[language.code])} placeholder="Seo Description"></div></div>`);
+  });
+  _push(`<!--]--></div><!--]-->`);
+}
+const _sfc_setup$8 = _sfc_main$8.setup;
+_sfc_main$8.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Shared/Translation.vue");
+  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
+};
+const Translation = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["ssrRender", _sfc_ssrRender$8]]);
+const _sfc_main$7 = {
+  components: {
+    Link,
+    Option,
+    Translation
+  },
+  props: {
+    categories: Object,
+    languages: Object,
+    depth: String,
+    tiniMSEApiKey: String
+  },
+  layout: AdminLayout,
+  setup() {
+    const form = useForm({
+      name: null,
+      languages: {
+        seo_h1: {},
+        text: {},
+        seo_title: {},
+        seo_description: {}
+      }
+    });
+    function store() {
+      console.log(form);
+    }
+    return { form, store };
+  }
+};
+function _sfc_ssrRender$7(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_Link = resolveComponent("Link");
+  const _component_Option = resolveComponent("Option");
+  const _component_Translation = resolveComponent("Translation");
+  _push(`<section${ssrRenderAttrs(mergeProps({ class: "template-cards" }, _attrs))}><div class="row"><div class="col-12 d-flex justify-content-between">`);
+  _push(ssrRenderComponent(_component_Link, {
+    href: _ctx.route("categories.index"),
+    class: "btn btn-outline-success"
+  }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`<i class="fa fa-arrow-left" aria-hidden="true"${_scopeId}></i> Список категорій `);
+      } else {
+        return [
+          createVNode("i", {
+            class: "fa fa-arrow-left",
+            "aria-hidden": "true"
+          }),
+          createTextVNode(" Список категорій ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="card card-primary mt-4"><form><div class="card-body"><div class="form-group"><label for="name">Найменування</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}"${ssrRenderAttr("value", $setup.form.name)} type="text" id="name" placeholder="Найменування"><div class="text-danger small">${ssrInterpolate($setup.form.errors.name)}</div></div><div class="form-group"><label for="name">Головна категорія</label><select name="parent_id" class="form-control"><option value="0">Без головної категорії</option><!--[-->`);
+  ssrRenderList($props.categories, (category) => {
+    _push(ssrRenderComponent(_component_Option, {
+      category,
+      depth: $props.depth
+    }, null, _parent));
+  });
+  _push(`<!--]--></select></div>`);
+  _push(ssrRenderComponent(_component_Translation, {
+    languages: $props.languages,
+    form: $setup.form,
+    tiniMSEApiKey: $props.tiniMSEApiKey
+  }, null, _parent));
+  _push(`</div><div class="card-footer"><button${ssrIncludeBooleanAttr($setup.form.processing) ? " disabled" : ""} type="submit" class="btn btn-primary">Зберегти</button></div></form></div></section>`);
+}
+const _sfc_setup$7 = _sfc_main$7.setup;
+_sfc_main$7.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Shop/Categories/Create.vue");
+  return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
+};
+const Create$1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["ssrRender", _sfc_ssrRender$7]]);
+const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: Create$1
+}, Symbol.toStringTag, { value: "Module" }));
+const _sfc_main$6 = {
+  components: {
+    Link
+  },
+  props: {
+    categories: Object
+  },
+  layout: AdminLayout,
+  methods: {
+    destroy(id) {
+      if (confirm("Ви впевненні?")) {
+        this.$inertia.delete(this.route("categories.destroy", id));
+      }
+    }
+  }
+};
+function _sfc_ssrRender$6(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_Link = resolveComponent("Link");
+  _push(`<section${ssrRenderAttrs(mergeProps({ class: "template-cards" }, _attrs))}><div class="row"><div class="col-12 d-flex justify-content-between">`);
+  _push(ssrRenderComponent(_component_Link, {
+    href: _ctx.route("categories.create"),
+    class: "btn btn-success"
+  }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`<i class="fa fa-plus" aria-hidden="true"${_scopeId}></i> Добавити категорію `);
+      } else {
+        return [
+          createVNode("i", {
+            class: "fa fa-plus",
+            "aria-hidden": "true"
+          }),
+          createTextVNode(" Добавити категорію ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div>`);
+  if (_ctx.$page.props.success) {
+    _push(`<div class="alert alert-success alert-dismissible mt-3"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h5><i class="icon fas fa-check"></i> Вітаю!</h5> ${ssrInterpolate(_ctx.$page.props.success)}</div>`);
+  } else {
+    _push(`<!---->`);
+  }
+  if (_ctx.$page.props.error) {
+    _push(`<div class="alert alert-danger alert-dismissible mt-3"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h5><i class="icon fas fa-ban"></i> Увага!</h5> ${ssrInterpolate(_ctx.$page.props.error)}</div>`);
+  } else {
+    _push(`<!---->`);
+  }
+  if ($props.categories.length > 0) {
+    _push(`<div class="card mt-4"><div class="card-body p-0"><table class="table table-sm table-striped"><thead><tr><th style="${ssrRenderStyle({ "width": "50px" })}">#</th><th>Найменування</th><th>Батьківська категорія</th><th style="${ssrRenderStyle({ "width": "210px" })}">Дія</th></tr></thead><tbody><!--[-->`);
+    ssrRenderList($props.categories, (category) => {
+      _push(`<tr><td>${ssrInterpolate(category.id)}.</td><td>${ssrInterpolate(category.name)}</td><td>${ssrInterpolate(category.parent ? category.parent.name : "-")}</td><td class="d-flex justify-content-between">`);
+      _push(ssrRenderComponent(_component_Link, {
+        class: "btn btn-default btn-sm",
+        href: _ctx.route("categories.edit", category.id)
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`Редагувати`);
+          } else {
+            return [
+              createTextVNode("Редагувати")
+            ];
+          }
+        }),
+        _: 2
+      }, _parent));
+      _push(`<a class="btn btn-danger btn-sm">Видалити</a></td></tr>`);
+    });
+    _push(`<!--]--></tbody></table></div></div>`);
+  } else {
+    _push(`<!---->`);
+  }
+  _push(`</section>`);
+}
 const _sfc_setup$6 = _sfc_main$6.setup;
 _sfc_main$6.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Language/Index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Admin/Shop/Categories/Index.vue");
   return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
 };
 const Index$1 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["ssrRender", _sfc_ssrRender$6]]);
-const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Index$1
 }, Symbol.toStringTag, { value: "Module" }));
@@ -382,7 +655,7 @@ _sfc_main$5.setup = (props, ctx) => {
   return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
 const Create = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["ssrRender", _sfc_ssrRender$5]]);
-const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Create
 }, Symbol.toStringTag, { value: "Module" }));
@@ -399,8 +672,8 @@ const _sfc_main$4 = {
       login: props.user.login,
       name: props.user.name,
       email: props.user.email,
-      phone: props.user.phone
-      // password: null,
+      phone: props.user.phone,
+      password: null
     });
     function update() {
       form.put(route("users.update", props.user.id));
@@ -430,7 +703,7 @@ function _sfc_ssrRender$4(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     }),
     _: 1
   }, _parent));
-  _push(`</div></div><div class="card card-primary mt-4"><form><div class="card-body"><div class="form-group"><label for="name">Логін</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.login }, "form-control"])}"${ssrRenderAttr("value", $setup.form.login)} type="text" id="login" placeholder="Логін"><div class="text-danger small">${ssrInterpolate($setup.form.errors.login)}</div></div><div class="form-group"><label for="name">Ім&#39;я</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}"${ssrRenderAttr("value", $setup.form.name)} type="text" id="name" placeholder="Ім&#39;я"><div class="text-danger small">${ssrInterpolate($setup.form.errors.name)}</div></div><div class="form-group"><label for="email">Email</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.email }, "form-control"])}"${ssrRenderAttr("value", $setup.form.email)} type="email" id="email" placeholder="Email"><div class="text-danger small">${ssrInterpolate($setup.form.errors.email)}</div></div><div class="form-group"><label for="phone">Телефон</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.phone }, "form-control"])}"${ssrRenderAttr("value", $setup.form.phone)} type="text" id="phone" placeholder="Телефон"><div class="text-danger small">${ssrInterpolate($setup.form.errors.phone)}</div></div></div><div class="card-footer"><button${ssrIncludeBooleanAttr($setup.form.processing) ? " disabled" : ""} type="submit" class="btn btn-primary">Змінити</button></div></form></div></section>`);
+  _push(`</div></div><div class="card card-primary mt-4"><form><div class="card-body"><div class="form-group"><label for="name">Логін</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.login }, "form-control"])}"${ssrRenderAttr("value", $setup.form.login)} type="text" id="login" placeholder="Логін"><div class="text-danger small">${ssrInterpolate($setup.form.errors.login)}</div></div><div class="form-group"><label for="name">Ім&#39;я</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.name }, "form-control"])}"${ssrRenderAttr("value", $setup.form.name)} type="text" id="name" placeholder="Ім&#39;я"><div class="text-danger small">${ssrInterpolate($setup.form.errors.name)}</div></div><div class="form-group"><label for="email">Email</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.email }, "form-control"])}"${ssrRenderAttr("value", $setup.form.email)} type="email" id="email" placeholder="Email"><div class="text-danger small">${ssrInterpolate($setup.form.errors.email)}</div></div><div class="form-group"><label for="phone">Телефон</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.phone }, "form-control"])}"${ssrRenderAttr("value", $setup.form.phone)} type="text" id="phone" placeholder="Телефон"><div class="text-danger small">${ssrInterpolate($setup.form.errors.phone)}</div></div><div class="form-group"><label for="password">Пароль</label><input class="${ssrRenderClass([{ "is-invalid": $setup.form.errors.password }, "form-control"])}"${ssrRenderAttr("value", $setup.form.password)} type="password" id="password" placeholder="Пароль"><div class="text-danger small">${ssrInterpolate($setup.form.errors.password)}</div></div></div><div class="card-footer"><button${ssrIncludeBooleanAttr($setup.form.processing) ? " disabled" : ""} type="submit" class="btn btn-primary">Змінити</button></div></form></div></section>`);
 }
 const _sfc_setup$4 = _sfc_main$4.setup;
 _sfc_main$4.setup = (props, ctx) => {
@@ -439,7 +712,7 @@ _sfc_main$4.setup = (props, ctx) => {
   return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
 const Edit = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["ssrRender", _sfc_ssrRender$4]]);
-const __vite_glob_0_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Edit
 }, Symbol.toStringTag, { value: "Module" }));
@@ -457,12 +730,23 @@ function _sfc_ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     _push(`<ul${ssrRenderAttrs(mergeProps({ class: "pagination pagination-sm m-0 float-right" }, _attrs))}><!--[-->`);
     ssrRenderList($props.links, (link, k) => {
       _push(`<li class="${ssrRenderClass([{ "active": link.active }, "page-item"])}">`);
-      _push(ssrRenderComponent(_component_Link, {
-        href: link.url,
-        key: k,
-        disabled: link.url === null,
-        class: "page-link"
-      }, null, _parent));
+      if (link.label === "pagination.previous") {
+        _push(ssrRenderComponent(_component_Link, {
+          href: link.url,
+          class: "page-link"
+        }, null, _parent));
+      } else if (link.label === "pagination.next") {
+        _push(ssrRenderComponent(_component_Link, {
+          href: link.url,
+          class: "page-link"
+        }, null, _parent));
+      } else {
+        _push(ssrRenderComponent(_component_Link, {
+          href: link.url,
+          disabled: link.url === null,
+          class: "page-link"
+        }, null, _parent));
+      }
       _push(`</li>`);
     });
     _push(`<!--]--></ul>`);
@@ -562,7 +846,7 @@ _sfc_main$2.setup = (props, ctx) => {
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
 const Index = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["ssrRender", _sfc_ssrRender$2]]);
-const __vite_glob_0_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Index
 }, Symbol.toStringTag, { value: "Module" }));
@@ -587,7 +871,7 @@ _sfc_main$1.setup = (props, ctx) => {
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
 const Home = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender$1]]);
-const __vite_glob_0_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: Home
 }, Symbol.toStringTag, { value: "Module" }));
@@ -609,7 +893,7 @@ createServer(
     page,
     render: renderToString,
     resolve: (name) => {
-      const pages = /* @__PURE__ */ Object.assign({ "./Pages/Admin/Index.vue": __vite_glob_0_0, "./Pages/Admin/Language/Create.vue": __vite_glob_0_1, "./Pages/Admin/Language/Edit.vue": __vite_glob_0_2, "./Pages/Admin/Language/Index.vue": __vite_glob_0_3, "./Pages/Admin/Users/Create.vue": __vite_glob_0_4, "./Pages/Admin/Users/Edit.vue": __vite_glob_0_5, "./Pages/Admin/Users/Index.vue": __vite_glob_0_6, "./Pages/Home.vue": __vite_glob_0_7 });
+      const pages = /* @__PURE__ */ Object.assign({ "./Pages/Admin/Index.vue": __vite_glob_0_0, "./Pages/Admin/Language/Create.vue": __vite_glob_0_1, "./Pages/Admin/Language/Edit.vue": __vite_glob_0_2, "./Pages/Admin/Language/Index.vue": __vite_glob_0_3, "./Pages/Admin/Shop/Categories/Create.vue": __vite_glob_0_4, "./Pages/Admin/Shop/Categories/Index.vue": __vite_glob_0_5, "./Pages/Admin/Shop/Categories/Option.vue": __vite_glob_0_6, "./Pages/Admin/Users/Create.vue": __vite_glob_0_7, "./Pages/Admin/Users/Edit.vue": __vite_glob_0_8, "./Pages/Admin/Users/Index.vue": __vite_glob_0_9, "./Pages/Home.vue": __vite_glob_0_10 });
       let page2 = pages[`./Pages/${name}.vue`];
       page2.default.layout = page2.default.layout || Layout;
       return page2;
